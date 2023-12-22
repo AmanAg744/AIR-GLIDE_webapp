@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style_login_message.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Blinker&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+    <title>Air Glide-Login</title>
+</head>
+<body>
+    <div class="login-form">
+        <header>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times; </span>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="alert">
+                Face not recognized. Please enter your login details!
+            </div>
+            <div class="login-title">
+                <h1 class="login-title">Login</h1>
+            </div>
+        </header>
+        <main>
+            <div class="input">
+                <form action="/login_get" class="input" id="login-form" method="post">
+                    <input type="email" placeholder="Email Address"
+                        class="Email-address" name="email">
+                    <input type="password" placeholder="Password"
+                        class="password" name="password">
+                    <div class="login-p">
+                        <label for="login">
+                            <div class="login">
+                                <a class="login" accesskey="l" onclick="myFunction()">Login</a>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="image-capture">
+                <h2 class="image-capture">Web-Cam:<br>(For Touchless Login)</h2>
+            </div>
+            <div class="camera">
+                <img src="{{ url_for('video_login') }}"/>
+            </div>
+            <div class="signup">
+                <p>Donot have a acount? <a class="signup" href="/signup">Signup</a></p>
+            </div>
+            <div class="camera_virtual_mouse">
+                <img src="{{ url_for('video_virtual_mouse') }}"/>
+            </div>
+        </main>
+    </div>
+    <script>
+        function myFunction() {
+            document.getElementById("login-form").submit();
+        }
+    </script>
+</body>
+</html>

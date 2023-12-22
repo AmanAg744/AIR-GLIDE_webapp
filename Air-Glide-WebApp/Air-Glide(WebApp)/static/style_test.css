@@ -1,0 +1,199 @@
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    margin: 0%;
+    background-color: #f2f2f2;
+}
+.home{
+    width: 100%;
+    height: 100%;
+}
+.first-container{
+    background-color: black;
+    
+}
+div.home_main{
+    display: flex;
+    height: 93.5vh;
+    align-items: center;
+}
+.pic{
+    align-self: flex-end;
+    width: 50%;
+}
+.topnav{
+    background-color: #333;
+    overflow: hidden;
+}
+
+.topnav a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.063em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.topnav a:hover{
+    background-color: #6FEDD6;
+    color: black;
+}
+
+.topnav-right{
+    float:right
+}
+
+.text{
+    color: #f2f2f2;
+    text-align: right;
+    padding: 13% 5% 14% 5%;
+}
+
+
+.air{
+   
+    font-family: 'Poller One', cursive;
+    font-size: 5em;
+    margin: auto;
+}
+.glide{
+    color: #6FEDD6;
+}
+
+.slogan{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pic{
+    height: 80%;
+
+}
+.second-container{
+    background-color: #f2f2f2;
+    height: 100vh;
+    padding: 1em;
+}
+div.aboutus_heading{
+    display: flex;
+    justify-content: center;
+}
+.sec{
+    width: fit-content;
+    font-family: 'Poppins', sans-serif;
+    /* width: 30%;
+    margin-top: 0%;
+    padding: 5em;
+    float: left;
+    margin-right: 2em;   */
+    font-size: 2em;
+    border-bottom: 3px #6FEDD6 solid;
+}
+div.ourvision_heading{
+    display: flex;
+    justify-content: center;
+}
+h2.our_vision{
+    width: fit-content;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 3px #6FEDD6 solid;
+}
+p{
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1.5em;
+    line-height: 2;
+    /* text-align: left; */
+    font-family: 'Ysabeau Infant', sans-serif;
+    font-size: 1.5rem;
+}
+
+.third-container{
+    background-color: black;
+    width: 100%;
+    height:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.third{
+    color: #f2f2f2;
+    width: 20%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.icon{
+    padding-bottom: 1%;
+    display: flex;
+    
+}
+
+.fa {
+    padding: 10px;
+    font-size: 1em;
+    width: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    
+    
+  }
+  
+ 
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+ 
+  
+ 
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+    margin-right: 4px;
+  }
+  
+ 
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+    margin-right: 4px;
+  }
+
+  .fa-instagram{
+    background: #E1306C;
+    color: white;
+  }
+.camera{
+    display: flex;
+    width: 20%;
+    height: 27%;
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+}
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+.icon-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: linear-gradient(90deg, #ECE9E6 0%, #FFF 100%);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-position: center;
+  }
+  a{
+    margin-left: 0.5em;
+  }

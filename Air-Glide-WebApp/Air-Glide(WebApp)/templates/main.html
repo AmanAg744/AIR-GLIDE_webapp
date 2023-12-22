@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Air Glide-Main Page</title>
+  <link rel="stylesheet" href="/static/style_main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Poller+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="welcome_gestures">
+      <img  class="icon" src="/static/Air_Glide Logo.png" alt="">
+      <h1 class="Air_Glide">AIR <span class="glide">GLIDE</span></h1>
+    </div>
+    <div class="gestures_list">
+      <h2 class="gestures">Gestures:</h2>
+      <ol>
+        <li>Index + Middle Finger(away) : Clicking</li>
+        <li>Index + Middle Finger(close) : Movement of mouse</li>
+        <li>Palm: Play/Pause</li>
+        <li>Thumbs Up/Down: Scroll Up/Down</li>
+        <li>Change in Distance between Tumb & Index Finger : Change in volume</li>
+        <li>Index + Pinky Finger: Mute</li>
+        <li>Pinky Finger: Enable voice recognition</li>
+        <li>First 3 Finger(close): Click and hold</li>
+        <li>First 3 Finger(away): Release</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <ul>
+      <li class="logout"><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+
+
+
+  <div class="content">
+    <div class="welcome">Welcome, {{ name }}! Begin your exciting control journey. Explore enchanting gestures at your fingertips!</div>
+
+    <div class="grid">
+      <div class="column">
+        <h2>Entertainment</h2>
+        <div class="line1_e">
+          <a href="https://www.youtube.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>YouTube</span>
+          </a>
+          <a href="https://www.netflix.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Netflix</span>
+          </a>
+        </div>
+        <div class="line2_e">
+          <a href="https://www.spotify.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Spotify</span>
+          </a>
+          <a href="https://www.primevideo.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Amazon<br>Prime</span>
+          </a>
+        </div>
+        <div class="line3_e">
+          <a href="https://www.hotstar.com/in" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Hotstar</span>
+          </a>
+        </div>
+       
+      </div>
+
+      <div class="column">
+        <h2>Social Media</h2>
+        <div class="line1_sm">
+          <a href="https://www.instagram.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.facebook.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Facebook</span>
+          </a>
+        </div>
+        <div class="line2_sm">
+          <a href="https://twitter.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Twitter</span>
+          </a>
+          <a href="https://web.whatsapp.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <h2>Work Tools</h2>
+        <div class="line1_wt">
+          <a href="https://www.canva.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Canva</span>
+          </a>
+          <a href="https://www.figma.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Figma</span>
+          </a>
+        </div>
+        <div class="line2_wt">
+          <a href="https://www.tinkercad.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>Tinkercad</span>
+          </a>
+          <a href="https://chat.openai.com/" class="shortcut" target='main'>
+            <div class="icon-container"></div>
+            <span>ChatGPT</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="camera_virtual_mouse">
+    <img src="{{ url_for('video_virtual_mouse') }}"/>
+  </div>
+
+  <script>
+    window.addEventListener("load", function() {
+      var shortcuts = document.getElementsByClassName("shortcut");
+      for (var i = 0; i < shortcuts.length; i++) {
+        var shortcut = shortcuts[i];
+        var url = shortcut.getAttribute("href");
+
+       
+        var img = document.createElement("img");
+        img.src = "https://www.google.com/s2/favicons?sz=64&domain=" + url;
+        img.alt = "Icon";
+
+       
+        var iconContainer = shortcut.getElementsByClassName("icon-container")[0];
+        iconContainer.style.backgroundImage = "url('" + img.src + "')";
+      }
+    });
+  </script>
+</body>
+</html>

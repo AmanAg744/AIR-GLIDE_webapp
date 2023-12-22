@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Glide-Home</title>
+    <link rel="stylesheet" href="/static/style_test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Luckiest+Guy&family=Merriweather:wght@300&family=Montserrat&family=Poller+One&family=Sacramento&family=Ysabeau+Infant&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180"
+      href="/static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="/static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+      href="/static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="home">
+      <div class="first-container">
+        <div class="topnav">
+          <a href="/">HOME</a>
+          <a href="#aboutus">ABOUT US</a>
+          <a href="#contact">CONTACT US</a>
+          <div class="topnav-right">
+            <a href="/login">LOGIN</a>
+            <a href="/signup">SIGN UP</a>
+          </div>
+
+        </div>
+        <div class="home_main">
+          <img class="pic" src="static\Home_Page_img.png" alt="techie">
+          <div class="text">
+            <h1 class="air">AIR <span class="glide">GLIDE</span></h1>
+            <h3 class="slogan">EFFORTLESS GESTURES, LIMITLESS
+              POSSIBILITIES</h3>
+          </div>
+        </div>
+
+      </div>
+      <div class="second-container" id="aboutus">
+        <div class="aboutus_heading">
+          <h2 class="sec">ABOUT US</h2>
+        </div>
+          <p>With Air Glide, you can effortlessly control your digital life with
+            effortless gestures.With our intuitive gesture recognition technology,
+            you can navigate and interact with various applications in a seamless
+            and captivating way. Experience the magic of hands-free control as you
+            glide through menus, scroll through content, and command your digital
+            world with grace. Elevate your digital experience with Air Glide.</p>
+          <div class="ourvision_heading">
+            <h2 class="our_vision">OUR VISION</h2>
+          </div>
+          <p>Our vision at Air Glide is to revolutionize technology interaction through intuitive hand gestures. We empower users to effortlessly navigate and command applications, breaking down barriers and enhancing productivity. With cutting-edge innovation, we create a seamless and immersive experience, where technology becomes an extension of oneself. Join us in shaping a future where interaction knows no bounds.</p>
+      </div>
+      <div class="third-container" id="contact">
+        <h2 class="third">CONTACT US</h2>
+        <div class="icon">
+          <a href="https://www.instagram.com/rnc_manipal/" class="shortcut"
+            target='main'>
+            <div class="icon-container"></div>
+          </a>
+          <a href="https://roboticsandcircuits.com/" class="shortcut"
+            target='main'>
+            <div class="icon-container"></div>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/robotics-and-circuits/mycompany/"
+            class="shortcut" target='main'>
+            <div class="icon-container"></div>
+          </a>
+        </div>
+      </div>
+      <div class="camera">
+        <img src="{{ url_for('video_virtual_mouse') }}" />
+      </div>
+    </div>
+    <script>
+            window.addEventListener("load", function() {
+              var shortcuts = document.getElementsByClassName("shortcut");
+              for (var i = 0; i < shortcuts.length; i++) {
+                var shortcut = shortcuts[i];
+                var url = shortcut.getAttribute("href");
+        
+               
+                var img = document.createElement("img");
+                img.src = "https://www.google.com/s2/favicons?sz=64&domain=" + url;
+                img.alt = "Icon";
+        
+               
+                var iconContainer = shortcut.getElementsByClassName("icon-container")[0];
+                iconContainer.style.backgroundImage = "url('" + img.src + "')";
+              }
+            });
+          </script>
+  </body>
+</html>

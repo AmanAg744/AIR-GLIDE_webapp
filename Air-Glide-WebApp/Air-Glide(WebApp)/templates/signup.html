@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style_signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Blinker&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+    <title>Air Glide-SignUp</title>
+</head>
+<body>
+    <div class="signup-form">
+        <header>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times; </span>
+                            {{ message }}
+                          </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            <div class="signup">
+                <h1 class="signup">Sign Up</h1>
+            </div>
+        </header>
+        <main>
+            <div class="input">
+                <form action="/signup_get" class="input" id="signup-form" name="signup-form" method='POST'>
+                    <input type="text" placeholder="Full Name"
+                        class="full-name" name="full_name">
+                    <input type="email" placeholder="Email Address"
+                        class="Email-address" name="email">
+                    <input type="password" placeholder="Password"
+                        class="password" name="password">
+                    <input type="password" class="confirm" placeholder="Confirm Password" name="confirm">
+                    <div class="image-capture">
+                        <h2 class="image-capture">Image Capture:<br>(For Touchless Login)</h2>
+                    </div>
+                    <div class="camera">
+                        <img src="{{ url_for('video_signup') }}"/>
+                    </div>
+                    <div class="capture-p">
+                        <label for="capture">
+                            <div class="capture" id="capture">
+                                <a class="capture" id="capture"  onclick="myFunction();">Capture & Submit</a>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="camera_virtual_mouse">
+                <img src="{{ url_for('video_virtual_mouse') }}"/>
+            </div>
+        </main>
+    </div>
+    <script>
+        function myFunction() {
+            document.getElementById("signup-form").submit();
+            return true;
+        }
+    </script>
+</body>
+</html>
